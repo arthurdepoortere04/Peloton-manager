@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Peloton Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- START SCREEN -->
+  <section id="start" class="screen">
+    <div class="hero">
+      <div class="hero-bike">🚴</div>
+      <h1>PELOTON MANAGER</h1>
+      <p class="tagline">Build a team. Win the stages. Conquer the UCI rankings.</p>
+      <div class="form">
+        <label>Team name<input id="team-name" maxlength="24" placeholder="e.g. Team Velocity" autocomplete="off"></label>
+        <label>Your name<input id="mgr-name" maxlength="20" placeholder="e.g. Coach Jan" autocomplete="off"></label>
+        <span class="label">Kit colours</span>
+        <div id="kits" class="kits"></div>
+        <div class="start-btns">
+          <button id="continue-btn" class="ghost hidden">▶ Continue career</button>
+          <button id="new-btn" class="primary big">🏁 Start new career</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GAME -->
+  <div id="game" class="hidden">
+    <header class="topbar">
+      <div class="brand">
+        <div id="logo" class="logo"></div>
+        <div>
+          <div id="team-title" class="team-title"></div>
+          <small id="mgr-title"></small>
+        </div>
+      </div>
+      <div class="chips">
+        <div class="chip">📅 <b id="date"></b></div>
+        <div class="chip">💰 <b id="coins"></b></div>
+        <div class="chip">🎟️ <b id="tokens"></b></div>
+        <div class="chip">🏆 UCI <b id="uci-rank">-</b></div>
+      </div>
+      <button id="next-btn" class="primary" data-act="next">Next day ⏭</button>
+    </header>
+
+    <div class="layout">
+      <nav id="nav">
+        <button data-view="dashboard" class="active">🏠 Dashboard</button>
+        <button data-view="squad">👥 Squad</button>
+        <button data-view="training">💪 Training</button>
+        <button data-view="scouting">🔭 Scouting</button>
+        <button data-view="transfers">🔁 Transfers</button>
+        <button data-view="races">🏁 Race calendar</button>
+        <button data-view="standings">📊 UCI ranking</button>
+        <button class="danger" data-act="reset">🗑 Reset career</button>
+      </nav>
+      <main id="app"></main>
+    </div>
+  </div>
+
+  <div id="modal" class="overlay hidden"><div id="modal-body" class="modal"></div></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
